@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Ticketing System</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Genius Digital DevOps Ticketing System</h1>
+        <form id="ticketForm">
+            <input type="text" id="title" placeholder="Enter title">
+            <textarea id="description" placeholder="Describe the issue"></textarea>
+            <button type="button" class="create-ticket" onclick="createTicket()">Create Ticket</button>
+        </form>
+        <div class="ticket-listing" id="ticket-list">
+            <!-- Ticket items will be injected here -->
+        </div>
+        <button class="logout" onclick="logout()">Logout</button>
+    </div>
+    
+    <div class="modal" id="ticketModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Ticket</h2>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="edit-title" placeholder="Enter title">
+                <textarea id="edit-description" placeholder="Describe the issue"></textarea>
+            
+                <h3>Comments</h3>
+                <ul id="commentList" class="comment-list"></ul>
+                <input type="text" id="newComment" placeholder="Add a comment">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="save-button" onclick="saveChanges()">Save Changes</button>
+                <button type="button" class="save-button" onclick="addComment()">Save Comment</button>
+                <button type="button" class="close-button" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
